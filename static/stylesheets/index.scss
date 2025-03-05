@@ -1,0 +1,48 @@
+@import 'variables';
+
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: $primary-color;
+    color: $font-color;
+}
+
+.main {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+.header{
+    height: $length-header-footer;
+    padding: 1rem;
+    border-top: 1rem solid $border-header-color;
+    background-color: $header-color;
+    color: $font-color;
+    text-align: center;
+
+}
+
+.header h1{
+    font-size: x-large;
+}
+
+.main-body{
+    
+    height: auto;
+
+}
+
+.footer{
+    height: $length-header-footer;
+    padding: 1rem;
+    background-color: $footer-color;
+    color: $footer-font-color;
+    text-align: center;
+}
