@@ -20,29 +20,102 @@ body {
 
 
 .header{
+    display: flex;
+    width: 100%;
     height: $length-header-footer;
     padding: 1rem;
     border-top: 1rem solid $border-header-color;
     background-color: $header-color;
     color: $font-color;
-    text-align: center;
-
+    box-sizing: border-box;
 }
 
-.header h1{
-    font-size: x-large;
+.menu{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+}
+
+.menu a{
+    height: 2.5rem;
+    text-decoration: none;
+    color: $menu-color-font;
+    font-size: xx-large;
+    margin: 2rem;
+    background-image: linear-gradient(120deg, $menu-color-hover_underline 0%, $menu-color-hover_underline 100%);
+    background-position: 0 89%;
+    background-size: 100% 0.5rem;
+    background-repeat: no-repeat;
+}
+
+
+.menu a:hover{
+    color: $menu-color-font-hover;
+    background-color: $menu-color-hover-background;
+    background-image: none;
+    animation: menu-animation 0.5s ease-in-out forwards;
+    
+}
+
+.menu a:visited{
+    color: $menu-color-font;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: left;
+    width: 30%;
+}
+
+.logo img{
+    width: 4rem;
+    height: 4rem;
+}
+
+.logo h1{
+    font-size: xx-large;
+    font-family: $logo-font;
+    margin-left: 5rem;
 }
 
 .main-body{
-    
-    height: auto;
+    box-sizing: border-box;
+    height: 100em;
 
 }
 
 .footer{
+    display: flex;
     height: $length-header-footer;
-    padding: 1rem;
     background-color: $footer-color;
     color: $footer-font-color;
     text-align: center;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes menu-animation {
+    from{
+        background-color: $header-color;
+        color: $font-color;
+        background-image: linear-gradient(120deg, $menu-color-hover_underline 0%, $menu-color-hover_underline 100%);
+        background-position: 0 89%;
+        background-size: 100% 0.5rem;
+        background-repeat: no-repeat;
+    }
+    to{
+        background-image: linear-gradient(120deg, $menu-color-hover_underline 0%, $menu-color-hover_underline 100%);
+        background-position: 100 89%;
+        background-size: 100% 0.5rem;
+        background-repeat: no-repeat;
+        background-color: $menu-color-hover-background;
+        background-position: center top;
+        color: white;
+    }
 }

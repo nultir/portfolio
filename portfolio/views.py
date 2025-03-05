@@ -5,7 +5,7 @@ from django.template import loader
 
 
 def home(request):
-    template = loader.get_template('portfolio/home.html')
+    template = loader.get_template('portfolio/index.html')
     return HttpResponse(template.render())
 
 
