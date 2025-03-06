@@ -17,14 +17,24 @@
                 </div>
                 <div class="menu">
                     <a href="{% url 'home' %}">Home</a>
-                    <a href="{% url 'projects' %}">Projects</a>
+                    <a href="#projects">Projects</a>
                     <a href="{% url 'contact' %}">Contact</a>
                 </div>
             </div>
             <div class="main-body">
-                <h1>Home</h1>
-                <p>Welcome to my portfolio!</p>
-
+                <div class="introduction">
+                    <div class="profile-image">
+                        <img src="{% static 'images/profile.jpg' %}" alt="Profile image" />
+                    </div>
+                    <div class="intro-text">
+                        <h1>Hi, I'm Kamil Kupisz. I'm a web developer with a passion for <br/> creating beautiful and functional websites.</h1>
+                    </div>
+                    
+                </div>
+                <div class="projects" id="projects">
+                    <h1>Newest projects</h1>
+                    
+                </div>
             </div>
             <div class="footer">
                 © 2025 Kamil Kupisz. All Rights Reserved.
