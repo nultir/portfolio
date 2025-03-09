@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader 
+from .models import Project
 # Create your views here.
 
 
 def home(request):
-    template = loader.get_template('portfolio/index.html')
-    return HttpResponse(template.render())
+    projects = Project.objects.all()
+    context = {'context': projects}
+    return render(request, 'portfolio/index.html', context)
 
 
 def projects(request):

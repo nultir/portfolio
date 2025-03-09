@@ -17,8 +17,9 @@
                 </div>
                 <div class="menu">
                     <a href="{% url 'home' %}">Home</a>
+                    <a href="#technologies">Technologies</a>
                     <a href="#projects">Projects</a>
-                    <a href="{% url 'contact' %}">Contact</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
             <div class="main-body">
@@ -31,8 +32,48 @@
                     </div>
                     
                 </div>
-                <div class="projects" id="projects">
-                    <h1>Newest projects</h1>
+                <div class="technologies" id="technologies">
+                    <h1>Technologies I'm working on.</h1>
+                    
+                </div>
+                <div class="projects_main" id="projects">
+                    <div class="title center" >
+                        <h1>Newest projects</h1>
+                    </div>
+                    {% for x in context %}
+                    {% if x.id|divisibleby:2 %}
+                    <div class="title left">
+                        <h1>{{x.title}}</h1>
+                    </div>
+                    <div class="project-left" id=project{{x.id}}>
+                        <div class="project-text">
+                            <p>{{x.description}}</p>
+                            <a href="{{x.url}}">View project</a>
+                        </div>
+                        <div class="project-image">
+                            <img src="{{media_url}}{{x.image.url}}" alt="Project image" />
+                        </div>
+                        
+                    {% else %}
+                    <div class="title right" >
+                        <h1>{{x.title}}</h1>
+                    </div>
+                    <div class="project-right" id=project{{x.id}}>
+                        <div class="project-image">
+                            <img src="{{media_url}}{{x.image.url}}" alt="Project image" />
+                        </div>
+                        <div class="project-text">
+                            <p>{{x.description}}</p>
+                            <a href="{{x.url}}">View project</a>
+                        </div>
+                    {% endif %}
+                        
+                        
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="contact" id="contact">
+                    <h1>Contact to me</h1>
                     
                 </div>
             </div>
