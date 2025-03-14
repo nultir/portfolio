@@ -15,3 +15,11 @@ class Project(models.Model):
 
 
 #TODO Create a model for the tech stack
+
+class Technologies(models.Model):
+    name = models.CharField(max_length=100)
+    level = models.TextField()
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.name

@@ -17,13 +17,14 @@ body {
 .center {
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  font-size: large; }
 
 .right {
   justify-content: right;
   align-items: right;
   text-align: right;
-  margin-right: 2rem; }
+  margin-right: 8rem; }
 
 .left {
   justify-content: left;
@@ -67,7 +68,7 @@ body {
   background-repeat: no-repeat; }
 
 .menu a:hover {
-  color: #801515;
+  color: #ffffff;
   background-color: #5f1169;
   background-image: none;
   animation: menu-animation 0.5s ease-in-out forwards; }
@@ -93,8 +94,7 @@ body {
   margin-left: 5rem; }
 
 .main-body {
-  box-sizing: border-box;
-  height: 100em; }
+  box-sizing: border-box; }
 
 .introduction {
   margin-top: 4.5rem;
@@ -153,13 +153,13 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  text-align: right; }
+  text-align: left; }
 
 .project-right {
   display: flex;
   flex-direction: row;
   width: 100%;
-  text-align: left; }
+  text-align: right; }
 
 .project-image {
   justify-content: left;
@@ -171,24 +171,56 @@ body {
   margin-top: 0cm; }
 
 .project-image img {
-  width: 30rem;
+  width: 53rem;
   height: 30rem; }
 
 .project-text {
   width: calc(30%-8rem);
   height: auto;
+  font-size: xx-large;
   margin: 4rem;
   margin-top: 0cm; }
+
+.project-text a {
+  height: 2.5rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: xx-large;
+  margin: 2rem;
+  background-image: linear-gradient(120deg, #de5052da 0%, #de5052da 100%);
+  background-position: 0 89%;
+  background-size: 100% 0.5rem;
+  background-repeat: no-repeat; }
+
+.project-text a:hover {
+  color: #ffffff;
+  background-color: #312133;
+  background-image: none;
+  animation: project-view-animation 0.5s ease-in-out forwards; }
 
 .technologies {
   margin-top: 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
   width: 100%;
   background-color: #4D3A50;
   color: #ffffff; }
+
+.technology {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto; }
+
+.technologies-text {
+  text-align: center;
+  font-size: x-large;
+  width: 100%; }
 
 .contact {
   display: flex;
@@ -223,6 +255,23 @@ body {
     background-size: 100% 0.5rem;
     background-repeat: no-repeat;
     background-color: #5f1169;
+    background-position: center top;
+    color: white; } }
+
+@keyframes project-view-animation {
+  from {
+    background-color: #312133;
+    color: #ffffff;
+    background-image: linear-gradient(120deg, #de5052da 0%, #de5052da 100%);
+    background-position: 0 89%;
+    background-size: 100% 0.5rem;
+    background-repeat: no-repeat; }
+  to {
+    background-image: linear-gradient(120deg, #de5052da 0%, #de5052da 100%);
+    background-position: 100 89%;
+    background-size: 100% 0.5rem;
+    background-repeat: no-repeat;
+    background-color: #de5052da;
     background-position: center top;
     color: white; } }
 

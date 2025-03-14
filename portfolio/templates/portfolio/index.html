@@ -33,8 +33,20 @@
                     
                 </div>
                 <div class="technologies" id="technologies">
-                    <h1>Technologies I'm working on.</h1>
-                    
+                    <div class="title center">
+                        <h1>Technologies I'm working on.</h1>
+                    </div>
+                    {% for x in technologies %}
+                    <div class="technology">
+                        <div class="title center">
+                            <h1>{{x.name}}</h1>
+                        </div>
+                        <div class="technologies-text">
+                            <p> Level of advancment: {{x.level}} </p>
+                            <p>{{ x.description}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="projects_main" id="projects">
                     <div class="title center" >
@@ -64,6 +76,7 @@
                         </div>
                         <div class="project-text">
                             <p>{{x.description}}</p>
+                            <p>Used technologies: {{x.technology}} </p>
                             <a href="{{x.url}}">View project</a>
                         </div>
                     {% endif %}
