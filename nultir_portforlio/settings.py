@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'sass_processor',
     'rest_framework',
     'portfolio',
+    'todo_app',
 ]
 
 MIDDLEWARE = [
