@@ -1,0 +1,68 @@
+.form-body {
+  border-top: 10px;
+  border-bottom: 10px;
+  border-color: #514652;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  background: linear-gradient(45deg, #5f1169, #3F5EFB);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 50rem; }
+
+.form {
+  background: #ffffff;
+  width: 15rem;
+  padding: 3em;
+  height: auto;
+  border-radius: 20px;
+  border-left: 1px solid #4D3A50;
+  border-top: 1px solid #4D3A50;
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out; }
+  .form p {
+    font-weight: 500;
+    color: #000000;
+    opacity: 0.7;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
+  .form a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 12px; }
+    .form a:hover {
+      text-shadow: 2px 2px 6px #00000040; }
+    .form a:active {
+      text-shadow: none; }
+  .form input, .form textarea, .form select {
+    background: transparent;
+    width: 200px;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: none;
+    border-left: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    border-radius: 5000px;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    resize: none; }
+    .form input:hover, .form textarea:hover, .form select:hover {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2); }
+  .form label {
+    font-family: 'Montserrat', sans-serif; }
+
+/*# sourceMappingURL=todo.css.map */

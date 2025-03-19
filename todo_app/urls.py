@@ -6,9 +6,10 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('categories',views.CategoryView.as_view()),
-    path('task',views.TaskView.as_view()),
-    path('tasks/form/', views.FormView.as_view(), name='task-form'),
+    path('category',views.CategoryView.as_view(), name='category'),
+    path('task',views.TaskView.as_view(), name='task'),
+    path('task/form/', views.TaskView_Form.as_view(), name='task-form'),
+    path('category/form/', views.CategoryView_Form.as_view(), name='category-form'),
     
 ]
 

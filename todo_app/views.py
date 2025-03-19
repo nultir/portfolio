@@ -43,9 +43,15 @@ class TaskView(APIView):
         return TemplateResponse(request, 'todo/form.html', {'fields': serializer.fields})
     
 
-class FormView(APIView):
+class TaskView_Form(APIView):
     def get(self,request):
-        serializer = TaskSerializer()
-        print(serializer.fields)
-        return render(request, 'todo/form.html', {'fields': serializer.fields,
+        form = TaskSerializer()
+        return render(request, 'todo/form.html', {'serializer': form,
                                                   'urls': 'task'})
+    
+
+class CategoryView_Form(APIView):
+    def get(self,request):
+        form = CategorySerializer()
+        return render(request, 'todo/form.html', {'serializer': form,
+                                                  'urls': 'category'})
