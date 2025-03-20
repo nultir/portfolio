@@ -38,10 +38,10 @@
                     </div>
                     {% for x in technologies %}
                     <div class="technology">
-                        <div class="title center">
+                        <div class="technology-slide technologies-title">
                             <h1>{{x.name}}</h1>
                         </div>
-                        <div class="technologies-text">
+                        <div class="technology-slide technologies-text">
                             <p> Level of advancment: {{x.level}} </p>
                             <p>{{ x.description}}</p>
                         </div>
@@ -52,38 +52,28 @@
                     <div class="title center" >
                         <h1>Newest projects</h1>
                     </div>
-                    {% for x in context %}
-                    {% if x.id|divisibleby:2 %}
-                    <div class="title left">
-                        <h1>{{x.title}}</h1>
-                    </div>
-                    <div class="project-left" id=project{{x.id}}>
-                        <div class="project-text">
-                            <p>{{x.description}}</p>
-                            <a href="{{x.url}}">View project</a>
-                        </div>
-                        <div class="project-image">
-                            <img src="{{media_url}}{{x.image.url}}" alt="Project image" />
-                        </div>
+                    <div class="projects">
+                        {% for x in context %}
                         
-                    {% else %}
-                    <div class="title right" >
-                        <h1>{{x.title}}</h1>
-                    </div>
-                    <div class="project-right" id=project{{x.id}}>
-                        <div class="project-image">
-                            <img src="{{media_url}}{{x.image.url}}" alt="Project image" />
+                        <div class="project" id=project{{x.id}}>
+                            <div class="project-image">
+                                <img src="{{media_url}}{{x.image.url}}" alt="Project image" />
+                            </div>
+                            <div class="project-text">
+                                <h2>{{x.title}}</h2>
+                                <div class="project-description">
+                                    <p>{{x.description}} <br/>
+                                        {{x.technology}}
+                                    </p>
+                                    
+                                </div>
+                                <a href="{{x.url}}">View project</a>
+                            </div>
+                            
+                            
                         </div>
-                        <div class="project-text">
-                            <p>{{x.description}}</p>
-                            <p>Used technologies: {{x.technology}} </p>
-                            <a href="{{x.url}}">View project</a>
-                        </div>
-                    {% endif %}
-                        
-                        
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
                 <div class="contact" id="contact">
                     <h1>Contact to me</h1>

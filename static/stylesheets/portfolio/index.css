@@ -149,54 +149,133 @@ body {
   background-color: #312133;
   color: #ffffff; }
 
-.project-left {
+.projects {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  text-align: left; }
+  flex-direction: row; }
 
-.project-right {
-  display: flex;
-  flex-direction: row;
+.project {
+  position: relative;
+  width: 480px;
+  height: 600px;
+  background: linear-gradient(45deg, #312133, #6a3970bd);
+  border-radius: 20px;
+  overflow: hidden;
+  color: #ffffff;
+  margin: 1rem;
+  border: #111111bb solid 5px; }
+
+.project::before {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: right; }
+  height: 100%;
+  clip-path: circle(150px at 80% 20%);
+  transition: 0.5s ease-in-out; }
+
+.project:hover:before {
+  clip-path: circle(300px at 80% -20%); }
+
+.project:after {
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.04); }
 
 .project-image {
-  justify-content: left;
-  display: flex;
-  align-items: center;
-  width: calc(40%-8rem);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: 100%;
   height: 100%;
-  margin: 4rem;
-  margin-top: 0cm; }
+  transition: .7s; }
+
+.project:hover .project-image {
+  top: 0%;
+  transform: translateY(-25%);
+  width: 0%;
+  height: 0%;
+  /* bug  */ }
 
 .project-image img {
-  width: 53rem;
-  height: 30rem; }
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px; }
+
+.project:hover .project-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  visibility: hidden; }
 
 .project-text {
-  width: calc(30%-8rem);
-  height: auto;
-  font-size: xx-large;
-  margin: 4rem;
-  margin-top: 0cm; }
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  transition: 1s;
+  z-index: 90; }
+
+.project:hover .project-text {
+  height: 500px; }
 
 .project-text a {
-  height: 2.5rem;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
   text-decoration: none;
-  color: #ffffff;
-  font-size: xx-large;
-  margin: 2rem;
-  background-image: linear-gradient(120deg, #de5052da 0%, #de5052da 100%);
-  background-position: 0 89%;
-  background-size: 100% 0.5rem;
-  background-repeat: no-repeat; }
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: .5s; }
 
-.project-text a:hover {
-  color: #ffffff;
-  background-color: #312133;
-  background-image: none;
-  animation: project-view-animation 0.5s ease-in-out forwards; }
+.project:hover .project-text a {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: .7s; }
+
+.project .project-text .project-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: .5s;
+  opacity: 0;
+  visibility: hidden; }
+
+.project:hover .project-text .project-description {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: .5s; }
+
+.project .project-text p {
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  margin-right: 10px; }
+
+.project .project-text h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff; }
+
+.project:hover {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: .5s; }
 
 .technologies {
   margin-top: 3rem;
@@ -208,19 +287,6 @@ body {
   width: 100%;
   background-color: #4D3A50;
   color: #ffffff; }
-
-.technology {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto; }
-
-.technologies-text {
-  text-align: center;
-  font-size: x-large;
-  width: 100%; }
 
 .contact {
   display: flex;
@@ -255,23 +321,6 @@ body {
     background-size: 100% 0.5rem;
     background-repeat: no-repeat;
     background-color: #5f1169;
-    background-position: center top;
-    color: white; } }
-
-@keyframes project-view-animation {
-  from {
-    background-color: #312133;
-    color: #ffffff;
-    background-image: linear-gradient(120deg, #de5052da 0%, #de5052da 100%);
-    background-position: 0 89%;
-    background-size: 100% 0.5rem;
-    background-repeat: no-repeat; }
-  to {
-    background-image: linear-gradient(120deg, #de5052da 0%, #de5052da 100%);
-    background-position: 100 89%;
-    background-size: 100% 0.5rem;
-    background-repeat: no-repeat;
-    background-color: #de5052da;
     background-position: center top;
     color: white; } }
 
