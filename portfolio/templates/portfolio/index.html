@@ -36,17 +36,27 @@
                     <div class="title center">
                         <h1>Technologies I'm working on.</h1>
                     </div>
+                    <div class="technology-box">
                     {% for x in technologies %}
-                    <div class="technology">
-                        <div class="technology-slide technologies-title">
-                            <h1>{{x.name}}</h1>
+                        <div class="technology-item">
+                            <div class="technology-item_box">
+
+                                <div class="technology-item_bg"></div>
+
+                                <div class="technologies-title">
+                                    <h1>{{x.name}}</h1>
+                                </div>
+
+                                <div class="technologies-text">
+                                    <p> Level of advancment: {{x.level}} </p>
+                                    <p>{{ x.description}}</p>
+                                </div>
+                                
+                
+                            </div>
                         </div>
-                        <div class="technology-slide technologies-text">
-                            <p> Level of advancment: {{x.level}} </p>
-                            <p>{{ x.description}}</p>
-                        </div>
-                    </div>
                     {% endfor %}
+                    </div>
                 </div>
                 <div class="projects_main" id="projects">
                     <div class="title center" >

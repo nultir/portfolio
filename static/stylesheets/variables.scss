@@ -17,6 +17,9 @@ $project-background-color: linear-gradient(45deg, #312133, #6a3970bd);
 $border-img-color: #000000;
 $border-img-color-hover: #90279e;
 $technologies-background-color: #4D3A50;
+$technology-background-color: #5e3564;
+$technology-border-color: #D707F7;
+$technology-marking-color: #F70719, #F707A9, #8507F7, #F72C07, #F75AC4;
 $technologies-font-color: #ffffff;
 $contact-background-color: #514652;
 $contact-font-color: #ffffff;
@@ -32,3 +35,7 @@ $logo-font: 'papyrus';
 
 //lengths
 $length-header-footer: 8rem;
+
+
+//other
+$repeat: 20;
