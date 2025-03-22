@@ -528,3 +528,74 @@ body {
     }
 }
 
+
+
+
+// Mobile styles
+@media only screen and (max-width: 768px) {
+    
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 1rem 0;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    
+    .menu a {
+        font-size: large;
+        margin: 1rem 0;
+    }
+    
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .logo h1 {
+        margin-left: 0;
+        font-size: x-large;
+    }
+    
+    .introduction{
+        margin: 0;
+    }
+
+    .introduction h1 {
+        margin: 0;
+        font-size: large;
+    }
+    
+    .profile-image img {
+        width: 10rem;
+        height: 10rem;
+    }
+   .projects{
+    display: flex;
+    flex-direction: column;
+   }
+
+   .project{
+
+    width: 240px;
+    height: 900px;
+
+
+    }
+
+    .project-image img{
+        width: 200px;
+    }
+
+    .project:hover .project-text{
+        height: 800px;
+    }
+    
+}
