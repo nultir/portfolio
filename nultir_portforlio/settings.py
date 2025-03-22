@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'nultir_portforlio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'koyebdb',
+        'USER': 'koyeb-adm',
+        'PASSWORD': 'npg_SZdqCYJPx1U2',
+        'HOST': 'ep-fancy-shape-a2es201p.eu-central-1.pg.koyeb.app',
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
 
