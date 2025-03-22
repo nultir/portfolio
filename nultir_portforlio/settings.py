@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -141,7 +142,9 @@ REST_FRAMEWORK = {
 
 
 
-STATIC_ROOT = BASE_DIR / 'static'
+
+
+
 
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
@@ -150,6 +153,7 @@ SASS_PROCESSOR_ROOT = STATIC_ROOT
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
 
