@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r*urir81=lis9%vup=nhk%y)rze!kgg)cv&jsrq4=7_v)74+ui'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nultir_db',
         'USER': 'nultir_admin_db',
-        'PASSWORD': '*******',
+        'PASSWORD': os.getenv('DB_PASS'),
         'HOST': 'ep-fancy-shape-a2es201p.eu-central-1.pg.koyeb.app',
         'OPTIONS': {'sslmode': 'require'},
     }
