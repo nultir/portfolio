@@ -1,0 +1,24 @@
+{% extends "todo/display.html" %}
+
+{% block content %}
+<thead>
+    <tr>
+        <th> Name </th>
+        <th> Description </th>
+        <th> Date of start task </th>
+        <th> Date of end task </th>
+        <th> Category </th>
+    </tr>
+</thead>
+    {% for task in objects %}
+    <tbody>
+        <tr>
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.date_of_start}}</td>
+            <td>{{task.date_of_end}}</td>
+            <td>{{task.category}}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+{% endblock %}

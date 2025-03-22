@@ -1,0 +1,7 @@
+{% extends "display.html" %}
+
+{% block content %}
+    {% for category in objects %}
+        <li>{{ category.name }}</li>
+    {% endfor %}
+{% endblock %}

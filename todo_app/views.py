@@ -32,15 +32,17 @@ class TaskView(APIView):
 
     def get(self, request, format=None):
         tasks = Task.objects.all()
-        serializer = TaskSerializer(tasks, many=True)
-        return Response(serializer.data)
+        serializer = TaskSerializer(tasks,many=True)
+        for x in serializer.data:
+            x['category'] = Category.objects.filter(id=x['category']).first().name
+        return TemplateResponse(request, 'todo/list_task.html', {'objects': serializer.data})
     
     def post(self, request, format=None):
         serializer = TaskSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=201)
-        return TemplateResponse(request, 'todo/form.html', {'fields': serializer.fields})
+            return TemplateResponse(request, 'todo/list_task.html', {'objects': [serializer.data]})
+        return TemplateResponse(request, 'todo/form.html', {'fields': serializer.data})
     
 
 class TaskView_Form(APIView):
