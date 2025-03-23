@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{% sass_src 'stylesheets/portfolio/index.scss' %}" rel="stylesheet" type="text/css" />
+        <link href="{% sass_src 'stylesheets/todo/todo.scss' %}" rel="stylesheet" type="text/css" />
         <title>Home</title>
     </head>
     <body>
@@ -30,13 +31,39 @@
                         <a href="{% url 'category-form' %}">Add new category</a>
                     </div>
                     <div class="task_box">
-                        <h1>{{objects}}</h1>
+                        <h1>{{date}}</h1>
                         <div class="change_task">
                             <h3>Change day</h3>
                             <form method="GET" action="{% url 'home-todo' %}">
                             <input type="date" name="date" value=''>
                             <input type="submit" value="send">
                             </form>
+                        </div>
+                        <div class="display-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th> Name </th>
+                                        <th> Description </th>
+                                        <th> Date of start task </th>
+                                        <th> Date of end task </th>
+                                        <th> Category </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for task in tasks %}
+
+                                        <tr>
+                                            <td>{{task.title}}</td>
+                                            <td>{{task.description}}</td>
+                                            <td>{{task.date_of_start}}</td>
+                                            <td>{{task.date_of_end}}</td>
+                                            <td>{{task.category}}</td>
+                                        </tr>
+                                    
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

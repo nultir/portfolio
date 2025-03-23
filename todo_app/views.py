@@ -9,7 +9,19 @@ from .serializers import *
 
 # Create your views here.
 def home(request):
-    return TemplateResponse(request, 'todo/index.html', {'objects': datetime.datetime.now().strftime("%A %d %B %Y")})
+    objects = {}
+    
+    if request.GET.get('date') != None:
+        date = datetime.datetime.strptime(request.GET.get('date'),"%Y-%m-%d")
+    else:
+        date = objects['date'] = datetime.datetime.now()
+    objects['date'] = date.strftime("%A %d %B %Y")
+    tasks = Task.objects.filter(date_of_end__gte=date, date_of_start__lte=date)
+    serializer = TaskSerializer(tasks,many=True)
+    for x in serializer.data:
+            x['category'] = Category.objects.filter(id=x['category']).first().name
+    objects['tasks'] = serializer.data
+    return TemplateResponse(request, 'todo/index.html', objects)
     
 
 
