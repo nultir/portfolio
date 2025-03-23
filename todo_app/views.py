@@ -3,12 +3,14 @@ from django.template.response import TemplateResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
+import datetime
 from .models import *
 from .serializers import *
 
 # Create your views here.
 def home(request):
-    return render(request,"todo/index.html")
+    return TemplateResponse(request, 'todo/index.html', {'objects': datetime.datetime.now().strftime("%A %d %B %Y")})
+    
 
 
 
@@ -18,14 +20,14 @@ class CategoryView(APIView):
     def get(self, request, format=None):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many=True)
-        return Response(serializer.data)
+        return TemplateResponse(request, 'todo/list_category.html', {'objects': serializer.data})
     
     def post(self, request, format=None):
         serializer = CategorySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
+            return TemplateResponse(request, 'todo/list_category.html', {'objects': [serializer.data]})
+        return TemplateResponse(request, 'todo/form.html', {'fields': serializer.data})
     
 
 class TaskView(APIView):

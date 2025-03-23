@@ -10,8 +10,9 @@
         <th> Category </th>
     </tr>
 </thead>
+<tbody>
     {% for task in objects %}
-    <tbody>
+    
         <tr>
             <td>{{task.title}}</td>
             <td>{{task.description}}</td>
@@ -19,6 +20,7 @@
             <td>{{task.date_of_end}}</td>
             <td>{{task.category}}</td>
         </tr>
-    </tbody>
+
     {% endfor %}
+</tbody>
 {% endblock %}

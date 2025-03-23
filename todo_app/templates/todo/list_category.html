@@ -1,7 +1,18 @@
-{% extends "display.html" %}
+{% extends "todo/display.html" %}
 
 {% block content %}
+    <thead>
+        <tr>  
+            <th>
+                Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
     {% for category in objects %}
-        <li>{{ category.name }}</li>
+        <tr>
+            <td>  {{ category.name }} </td>
+        </tr>
     {% endfor %}
+    </tbody>
 {% endblock %}
