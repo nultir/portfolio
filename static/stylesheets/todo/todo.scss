@@ -137,3 +137,83 @@ tr:hover td {
 .display-container th, td {
   padding: 0.5em;
 }
+
+.change_task{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $technologies-background-color;
+  width: 100%;
+  color: $primary-color;
+  padding-bottom: 10px;
+}
+
+.change_task form{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+
+  input[type=date]{
+    background-color: $menu-color-hover-background;
+    border: 3px solid $border-img-color;
+    color: $primary-color;
+    margin-right: 1rem;
+    width: 15rem;
+    height: 5rem;
+    font-size: xx-large;
+  } 
+  input[type=submit]{
+    font: inherit;
+  color: currentColor;
+  background-color: $menu-color-hover-background;
+  border: .2em solid var(--darkGray);
+  border-radius: .5em;
+  transition: all .25s ease-in;
+  width: 6em;
+  font-size: 150%;
+  white-space: nowrap;
+  cursor:pointer;
+  }
+  
+}
+
+
+.add-forms{
+  
+  a{
+    text-decoration: none;
+    color:#ddd;
+    cursor: pointer;
+  }
+
+  display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 1.5em;
+    width: 9em;
+
+
+
+  button {
+    cursor: pointer;
+    font: inherit;
+    color: currentColor;
+    background-color: #000;
+    border: .2em solid var(--darkGray);
+  /*   border: .2em solid transparent; */
+    border-radius: .5em;
+    transition: all .25s ease-in;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, var(--glowRed) 0, transparent 1em, transparent 100%),
+      linear-gradient(0deg, var(--glowRed) 0, transparent 1em, transparent 100%),
+      linear-gradient(270deg, var(--glowRed) 0, transparent 1em, transparent 100%),
+      linear-gradient(180deg, var(--glowRed) 0, transparent 1em, transparent 100%);
+    background-position: -1em 0, 0 1em, 1em 0, 0 -1em;
+    width: 10em;
+    font-size: 150%;
+    white-space: nowrap;
+  }
+  
+  
+}

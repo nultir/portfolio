@@ -108,4 +108,64 @@ tr:hover td {
 .display-container th, td {
   padding: 0.5em; }
 
+.change_task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4D3A50;
+  width: 100%;
+  color: #ffffff;
+  padding-bottom: 10px; }
+
+.change_task form {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem; }
+  .change_task form input[type=date] {
+    background-color: #5f1169;
+    border: 3px solid #000000;
+    color: #ffffff;
+    margin-right: 1rem;
+    width: 15rem;
+    height: 5rem;
+    font-size: xx-large; }
+  .change_task form input[type=submit] {
+    font: inherit;
+    color: currentColor;
+    background-color: #5f1169;
+    border: 0.2em solid var(--darkGray);
+    border-radius: .5em;
+    transition: all .25s ease-in;
+    width: 6em;
+    font-size: 150%;
+    white-space: nowrap;
+    cursor: pointer; }
+
+.add-forms {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 1.5em;
+  width: 9em; }
+  .add-forms a {
+    text-decoration: none;
+    color: #ddd;
+    cursor: pointer; }
+  .add-forms button {
+    cursor: pointer;
+    font: inherit;
+    color: currentColor;
+    background-color: #000;
+    border: 0.2em solid var(--darkGray);
+    /*   border: .2em solid transparent; */
+    border-radius: .5em;
+    transition: all .25s ease-in;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, var(--glowRed) 0, transparent 1em, transparent 100%), linear-gradient(0deg, var(--glowRed) 0, transparent 1em, transparent 100%), linear-gradient(270deg, var(--glowRed) 0, transparent 1em, transparent 100%), linear-gradient(180deg, var(--glowRed) 0, transparent 1em, transparent 100%);
+    background-position: -1em 0, 0 1em, 1em 0, 0 -1em;
+    width: 10em;
+    font-size: 150%;
+    white-space: nowrap; }
+
 /*# sourceMappingURL=todo.css.map */

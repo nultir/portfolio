@@ -27,15 +27,23 @@
             <div class="main-body">
                 <div class="calendar-box">
                     <div class="add-forms">
-                        <a href="{% url 'task-form' %}">Add new task</a>
-                        <a href="{% url 'category-form' %}">Add new category</a>
+                        <a href="{% url 'task-form' %}">
+                            <button type="button">
+                            Add new task
+                            </button>
+                        </a>
+                        <a href="{% url 'category-form' %}">
+                            <button type="button">
+                            Add new category
+                            </button>
+                        </a>
                     </div>
                     <div class="task_box">
                         <h1>{{date}}</h1>
                         <div class="change_task">
                             <h3>Change day</h3>
                             <form method="GET" action="{% url 'home-todo' %}">
-                            <input type="date" name="date" value=''>
+                            <input type="date" name="date" value='{{date}}'>
                             <input type="submit" value="send">
                             </form>
                         </div>
