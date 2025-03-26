@@ -69,6 +69,16 @@ body {
     justify-content: center;
     height: 100%;
     width: 70%;
+
+    button{
+        height: 2.5rem;
+        text-decoration: none;
+        color: $menu-color-font;
+        font-size: xx-large;
+        margin: 2rem;
+    
+    
+    }
 }
 
 .menu a{

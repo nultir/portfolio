@@ -22,6 +22,12 @@
                     <a href="{% url 'home-todo' %}">Main site todo</a>
                     <a href="{% url 'task' %}">Tasks</a>
                     <a href="{% url 'category' %}">Categories</a>
+
+                        <form method="POST" action="{% url 'logout'%}">
+                            {% csrf_token %}
+                            <button type="submit">logout</button>
+                        </form>
+
                 </div>
             </div>
             <div class="main-body">
