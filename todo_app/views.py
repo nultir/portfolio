@@ -5,7 +5,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
 import datetime
 from .models import *
 from .serializers import *
@@ -56,7 +55,7 @@ class TaskView(APIView,LoginRequiredMixin):
         tasks = Task.objects.filter(person_id=request.user).values()
         serializer = TaskSerializer(tasks,many=True)
         for x in serializer.data:
-            x['category'] = Category.objects.filter(id=x['category']).first().name
+            x['category_id'] = Category.objects.filter(id=x['category']).first().name
         return TemplateResponse(request, 'todo/list_task.html', {'objects': serializer.data})
 
     def post(self, request, format=None):
